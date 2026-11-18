@@ -63,7 +63,7 @@ export const Exercise3UsersSolved = () => {
         if (err.name === "AbortError") return;
         setError(err.message);
       } finally {
-        if (!controller.signal.aborted) setIsLoading(false);
+         setIsLoading(false);
       }
     };
 
