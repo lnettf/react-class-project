@@ -52,7 +52,6 @@ export const Exercise3UsersSolved = () => {
         const url = `${USERS_URL}?q=${encodeURIComponent(search)}`;
         const res = await fetch(url, { signal: controller.signal });
 
-        // fetch NO lanza error con un 404/500: lo lanzamos nosotros
         if (!res.ok) {
           throw new Error(`Error ${res.status} al cargar los usuarios`);
         }

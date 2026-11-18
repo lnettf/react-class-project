@@ -27,7 +27,16 @@ import { Product } from "../../components/Product/Product";
   - Añade un <select> con el límite de resultados (6, 12, 24) y mételo en la URL.
 */
 
+const generateUrl = (search) => {
+  if (search.length > 0) {
+    return `${SEARCH_URL}?q=${search}`;
+  }
+
+  return SEARCH_URL;
+}
+
 const SEARCH_URL = "https://dummyjson.com/products/search";
+const DEBOUNCE = 500;
 
 export const Exercise4ProductSearch = () => {
   const [search, setSearch] = useState("");
@@ -37,9 +46,36 @@ export const Exercise4ProductSearch = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // TODO 1: efecto de debounce (setTimeout + clearTimeout)
+  useEffect(() => {
+    const get = async () => {
+      try {
+        const url = generateUrl(search)
+        const res = await fetch(url);
+        if (!res.ok) {
+          throw new Error("ERROR")
+        }
+        const productsResult = await res.json();
+        setProducts(productsResult.products);
+      } catch (error) {
+        setError(error)
+      } finally {
+        setIsLoading(false)
+      }
+    }
+    get()
+  }, [debouncedSearch]);
 
-  // TODO 2: efecto que hace el fetch a SEARCH_URL con debouncedSearch
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebouncedSearch(search)
+    }, DEBOUNCE);
+
+    return () => {
+      clearInterval(timer)
+    }
+  }, [search])
+
 
   return (
     <section className={styles.card}>
@@ -49,13 +85,24 @@ export const Exercise4ProductSearch = () => {
         className={styles.input}
         placeholder="Buscar productos (ej: phone)"
         value={search}
-        onChange={(e) => setSearch(e.target.value)}
+        onChange={(event) => setSearch(event.target.value)}
       />
 
       {/* TODO 3: "Cargando...", error y "X resultados" */}
+      {isLoading && (<p>Cargando...</p>)}
+      {error && (<p>error...</p>)}
 
       <div className={styles.grid}>
-        {/* TODO 4: pinta los productos con <Product /> */}
+        {products.map(product => {
+
+          return (
+            <div>
+              <h3>{product.title}</h3>
+
+              <img src={product.images[0]} alt="" />
+            </div>
+          )
+        })}
       </div>
     </section>
   );
