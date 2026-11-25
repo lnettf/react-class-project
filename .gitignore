@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Soluciones que todavía no se suben
+src/exercises/custom-hooks/solved/

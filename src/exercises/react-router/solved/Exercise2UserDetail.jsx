@@ -6,20 +6,20 @@ import styles from "../../Exercises.module.css";
   EJERCICIO 2 — Listado y detalle con rutas dinámicas (useParams + useNavigate)   ✅ SOLUCIÓN
 
   Rutas:
-    /router/2           → <UserList />   (lista de usuarios, cada uno es un Link)
-    /router/2/:userId   → <UserDetail /> (pide /users/:userId a la API)
+    /ejercicios/router/2           → <UserList />   (lista de usuarios, cada uno es un Link)
+    /ejercicios/router/2/:userId   → <UserDetail /> (pide /users/:userId a la API)
 
   Qué se practica:
-  - ":userId" es un parámetro: encaja con /router/2/1, /router/2/7, /router/2/abc...
+  - ":userId" es un parámetro: encaja con /ejercicios/router/2/1, /ejercicios/router/2/7, /ejercicios/router/2/abc...
   - useParams() devuelve { userId: "7" } → ¡siempre es un STRING!
   - Como el fetch depende de userId, va en el array de dependencias del efecto:
-    si navegas de /router/2/1 a /router/2/2 el componente NO se desmonta,
+    si navegas de /ejercicios/router/2/1 a /ejercicios/router/2/2 el componente NO se desmonta,
     solo cambia userId y el efecto se vuelve a ejecutar.
   - useNavigate() para navegar desde código: navigate(-1) = botón "atrás".
-  - /router/2/999 → la API devuelve 404 → mostramos "Usuario no encontrado".
+  - /ejercicios/router/2/999 → la API devuelve 404 → mostramos "Usuario no encontrado".
 */
 
-const BASE = "/router/2";
+const BASE = "/ejercicios/router/2";
 const USERS_URL = "https://jsonplaceholder.typicode.com/users";
 
 const UserList = () => {

@@ -32,10 +32,12 @@ Enunciado y fases: [docs/PROYECTO.md](docs/PROYECTO.md)
 | `/`                       | 🛒 Proyecto: Mi tienda (inicio)                 |
 | `/productos`, `/productos/:productId` | Tienda: productos                   |
 | `/usuarios`, `/usuarios/nuevo`, `/usuarios/:userId` | Tienda: usuarios      |
-| `/ejercicios/use-effect`  | Lista de productos + ejercicios de `useEffect`  |
+| `/ejercicios`             | Portada de los ejercicios (menú con todas las secciones) |
 | `/ejercicios/use-state`   | Ejemplo del contador con `useState`             |
+| `/ejercicios/use-effect`  | Lista de productos + ejercicios de `useEffect`  |
+| `/ejercicios/router`      | Introducción y ejercicios de React Router       |
 | `/ejercicios/formularios` | Ejercicios de formularios                       |
-| `/router`                 | Introducción y ejercicios de React Router       |
+| `/ejercicios/custom-hooks`| Ejemplo y ejercicio de custom hooks             |
 
 ## Estructura
 
@@ -60,13 +62,21 @@ src/
 │   └── Product/
 └── exercises/
     ├── Exercises.module.css  # Estilos compartidos por todos los ejercicios
+    ├── ExercisesLayout.jsx   # Menú común de /ejercicios
+    ├── ExercisesHome.jsx     # Portada de /ejercicios
+    ├── sections.js           # Lista de secciones (menú + portada)
     ├── use-state/            # /ejercicios/use-state (contador)
     ├── use-effect/           # /ejercicios/use-effect (+ solved/)
     ├── forms/                # /ejercicios/formularios
     │   ├── FormsExercises.jsx
     │   ├── Exercise1BasicForm.jsx
     │   └── Exercise2DynamicForm.jsx
-    └── react-router/         # /router (+ solved/)
+    ├── react-router/         # /ejercicios/router (+ solved/)
+    └── custom-hooks/         # /ejercicios/custom-hooks
+        ├── CustomHooksExercises.jsx
+        ├── CustomHookExample.jsx # Ejemplo resuelto con useCounter
+        ├── Exercise1UseToggle.jsx
+        └── hooks/useCounter.js
 ```
 
 Cada ejercicio tiene el enunciado y las pistas en el comentario de arriba del fichero.
@@ -91,13 +101,20 @@ Busca los `TODO` para ver qué hay que completar. Las soluciones están en las c
 | 1 | Formulario de contacto          | `useState` con un objeto, inputs controlados, un handler por campo, `onSubmit` |
 | 2 | Registro con un solo handler    | `handleChange` único con `[name]: value`, checkbox con `checked`, `<select>` |
 
-### React Router (`/router`)
+### React Router (`/ejercicios/router`)
 
 | # | Ejercicio             | Qué se practica                                             |
 | - | --------------------- | ----------------------------------------------------------- |
 | 1 | Rutas básicas         | `Routes`, `Route`, `index`, `NavLink` activo, página 404    |
 | 2 | Detalle de usuario    | Rutas dinámicas `:userId`, `useParams`, `useNavigate`       |
 | 3 | Búsqueda en la URL    | `useSearchParams` (`?q=`) para no perder la búsqueda        |
+
+### Custom hooks (`/ejercicios/custom-hooks`)
+
+| #       | Ejercicio   | Qué se practica                                                        |
+| ------- | ----------- | ---------------------------------------------------------------------- |
+| Ejemplo | useCounter  | Qué es un custom hook, parámetros, cada uso tiene su propio estado     |
+| 1       | useToggle   | Extraer lógica repetida (tres `useState` iguales) a un hook propio     |
 
 ## APIs que usamos
 

@@ -11,7 +11,7 @@ import styles from "../Exercises.module.css";
 
   Enunciado:
   1. Cambia el useState de `search` por useSearchParams(), para que la URL sea
-     /router/3?q=lean. Recarga la página: la búsqueda tiene que mantenerse.
+     /ejercicios/router/3?q=lean. Recarga la página: la búsqueda tiene que mantenerse.
   2. Si el input se queda vacío, quita el ?q= de la URL.
   3. Escribe "leanne" y pulsa "atrás" en el navegador. ¿Cuántas veces tienes que
      pulsarlo? Arréglalo para que no se guarde una entrada por cada tecla.
@@ -25,7 +25,7 @@ import styles from "../Exercises.module.css";
   - El useEffect del fetch NO hay que tocarlo. ¿Por qué?
 
   Reto extra:
-  - Haz que cada nombre sea un Link al detalle del ejercicio 2 (/router/2/<id>).
+  - Haz que cada nombre sea un Link al detalle del ejercicio 2 (/ejercicios/router/2/<id>).
 */
 
 const USERS_URL = "https://jsonplaceholder.typicode.com/users";

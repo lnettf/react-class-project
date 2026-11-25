@@ -5,6 +5,9 @@ import { UseEffectExercises } from "./exercises/use-effect/UseEffectExercises";
 import { RouterExercises } from "./exercises/react-router/RouterExercises";
 import { FormsExercises } from "./exercises/forms/FormsExercises";
 import { CounterExample } from "./exercises/use-state/CounterExample";
+import { CustomHooksExercises } from "./exercises/custom-hooks/CustomHooksExercises";
+import { ExercisesLayout } from "./exercises/ExercisesLayout";
+import { ExercisesHome } from "./exercises/ExercisesHome";
 import { MainLayout } from "./layouts/MainLayout";
 import { HomePage } from "./pages/HomePage/HomePage";
 import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage";
@@ -49,19 +52,23 @@ export const App = () => {
       </Route>
 
       {/* ───────── EJERCICIOS (ya hechos) ───────── */}
-      <Route
-        path="/ejercicios/use-effect"
-        element={
-          <>
-            <ProductList products={PRODUCTS_LIST} />
-            <UseEffectExercises />
-          </>
-        }
-      />
-      <Route path="/ejercicios/use-state" element={<CounterExample />} />
-      <Route path="/ejercicios/formularios" element={<FormsExercises />} />
-      {/* El "/*" deja que RouterExercises tenga sus propias rutas dentro */}
-      <Route path="/router/*" element={<RouterExercises />} />
+      <Route path="/ejercicios" element={<ExercisesLayout />}>
+        <Route index element={<ExercisesHome />} />
+        <Route path="use-state" element={<CounterExample />} />
+        <Route
+          path="use-effect"
+          element={
+            <>
+              <ProductList products={PRODUCTS_LIST} />
+              <UseEffectExercises />
+            </>
+          }
+        />
+        {/* El "/*" deja que RouterExercises tenga sus propias rutas dentro */}
+        <Route path="router/*" element={<RouterExercises />} />
+        <Route path="formularios" element={<FormsExercises />} />
+        <Route path="custom-hooks" element={<CustomHooksExercises />} />
+      </Route>
 
       <Route path="*" element={<NotFoundPage />} />
     </Routes>

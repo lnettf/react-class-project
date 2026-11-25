@@ -61,29 +61,23 @@ export const RouterExercises = () => {
       <div>
         <h1 className={styles.pageTitle}>Ejercicios de React Router</h1>
         <nav className={styles.nav}>
-          <Link className={styles.navLink} to="/">
-            → Ir a la tienda
-          </Link>
-          <Link className={styles.navLink} to="/ejercicios/use-effect">
-            ← Ejercicios de useEffect
-          </Link>
-          {/* `end`: solo está activo si la URL es exactamente /router */}
-          <NavLink to="/router" end className={navClass}>
+          {/* `end`: solo está activo si la URL es exactamente /ejercicios/router */}
+          <NavLink to="/ejercicios/router" end className={navClass}>
             Intro
           </NavLink>
-          <NavLink to="/router/1" className={navClass}>
+          <NavLink to="/ejercicios/router/1" className={navClass}>
             Ejercicio 1
           </NavLink>
-          <NavLink to="/router/2" className={navClass}>
+          <NavLink to="/ejercicios/router/2" className={navClass}>
             Ejercicio 2
           </NavLink>
-          <NavLink to="/router/3" className={navClass}>
+          <NavLink to="/ejercicios/router/3" className={navClass}>
             Ejercicio 3
           </NavLink>
         </nav>
       </div>
 
-      {/* Rutas "hijas" de /router/* → los path son relativos a /router */}
+      {/* Rutas "hijas" de /ejercicios/router/* → los path son relativos a /ejercicios/router */}
       <Routes>
         <Route index element={<RouterIntro />} />
         <Route path="1/*" element={<Exercise1Routes />} />

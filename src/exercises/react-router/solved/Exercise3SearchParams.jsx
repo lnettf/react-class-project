@@ -6,7 +6,7 @@ import styles from "../../Exercises.module.css";
   EJERCICIO 3 — La búsqueda en la URL (useSearchParams)   ✅ SOLUCIÓN
 
   Es el buscador del ejercicio 3 de useEffect, pero el texto buscado
-  vive en la URL (/router/3?q=lean) en vez de en un useState.
+  vive en la URL (/ejercicios/router/3?q=lean) en vez de en un useState.
 
   ¿Para qué?
   - Si recargas la página, la búsqueda se mantiene.
@@ -89,7 +89,7 @@ export const Exercise3SearchParams = () => {
         {users.map((user) => (
           <li key={user.id}>
             {/* Reto extra: enlazamos con el detalle del ejercicio 2 */}
-            <Link to={`/router/2/${user.id}`}>
+            <Link to={`/ejercicios/router/2/${user.id}`}>
               <strong>{user.name}</strong>
             </Link>{" "}
             — {user.email}

@@ -1,4 +1,3 @@
-import { Link } from "react-router";
 import styles from "../Exercises.module.css";
 import { Exercise1BasicForm } from "./Exercise1BasicForm";
 import { Exercise2DynamicForm } from "./Exercise2DynamicForm";
@@ -46,17 +45,6 @@ export const FormsExercises = () => {
   return (
     <main className={styles.page}>
       <h1 className={styles.pageTitle}>Ejercicios de formularios</h1>
-      <nav className={styles.nav}>
-        <Link className={styles.navLink} to="/">
-          → Ir a la tienda
-        </Link>
-        <Link className={styles.navLink} to="/ejercicios/use-effect">
-          Ejercicios de useEffect
-        </Link>
-        <Link className={styles.navLink} to="/router">
-          Ejercicios de React Router
-        </Link>
-      </nav>
       <FormsIntro />
       <Exercise1BasicForm />
       <Exercise2DynamicForm />

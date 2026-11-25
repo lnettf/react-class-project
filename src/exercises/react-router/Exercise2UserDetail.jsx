@@ -6,23 +6,23 @@ import styles from "../Exercises.module.css";
   EJERCICIO 2 — Listado y detalle con rutas dinámicas (useParams + useNavigate)
 
   Enunciado:
-  Este ejercicio vive en /router/2:
-    /router/2           → <UserList />   (ya hace el fetch de la lista)
-    /router/2/:userId   → <UserDetail />
+  Este ejercicio vive en /ejercicios/router/2:
+    /ejercicios/router/2           → <UserList />   (ya hace el fetch de la lista)
+    /ejercicios/router/2/:userId   → <UserDetail />
 
   1. Crea las dos rutas. La segunda tiene un parámetro: path=":userId".
-  2. En <UserList />, convierte cada nombre en un <Link> a /router/2/<id>.
+  2. En <UserList />, convierte cada nombre en un <Link> a /ejercicios/router/2/<id>.
   3. En <UserDetail />:
      a. Lee el id de la URL con useParams().
      b. Pide https://jsonplaceholder.typicode.com/users/<id> y muestra
         nombre, email, teléfono, ciudad (address.city) y empresa (company.name).
      c. Muestra "Cargando..." y los errores. Si la API devuelve 404,
-        el mensaje debe ser "Usuario no encontrado" (prueba /router/2/999).
+        el mensaje debe ser "Usuario no encontrado" (prueba /ejercicios/router/2/999).
   4. Añade un botón "← Atrás" que use useNavigate().
 
   Pistas:
   - ¿Qué va en el array de dependencias del efecto del detalle?
-    Pista: si navegas de /router/2/1 a /router/2/2, ¿se vuelve a montar el componente?
+    Pista: si navegas de /ejercicios/router/2/1 a /ejercicios/router/2/2, ¿se vuelve a montar el componente?
   - navigate(-1) vuelve a la página anterior, igual que el botón del navegador.
 
   Reto extra:
@@ -30,7 +30,7 @@ import styles from "../Exercises.module.css";
     Cuidado: useParams devuelve STRINGS. "1" + 1 = "11" 🤔
 */
 
-const BASE = "/router/2";
+const BASE = "/ejercicios/router/2";
 const USERS_URL = "https://jsonplaceholder.typicode.com/users";
 
 const UserList = () => {

@@ -10,7 +10,7 @@ import { Link, Outlet } from "react-router";
   1. Crea un menú con NavLink a: Inicio (/), Productos (/productos),
      Usuarios (/usuarios) y Nuevo usuario (/usuarios/nuevo).
   2. El enlace activo tiene que verse distinto.
-  3. Deja en el pie un enlace a los ejercicios (/ejercicios/use-effect).
+  3. Deja en el pie un enlace a los ejercicios (/ejercicios).
 
   Pistas:
   - Mira el menú de src/exercises/react-router/RouterExercises.jsx.
@@ -33,7 +33,7 @@ export const MainLayout = () => {
       </main>
 
       <footer>
-        <Link to="/ejercicios/use-effect">Ir a los ejercicios</Link>
+        <Link to="/ejercicios">Ir a los ejercicios</Link>
       </footer>
     </>
   );

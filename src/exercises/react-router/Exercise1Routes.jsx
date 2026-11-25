@@ -5,11 +5,11 @@ import styles from "../Exercises.module.css";
   EJERCICIO 1 — Rutas básicas, menú con NavLink y página 404
 
   Enunciado:
-  Este ejercicio vive en /router/1. Haz que funcionen estas rutas:
-    /router/1                 → <Home />
-    /router/1/sobre-nosotros  → <About />
-    /router/1/contacto        → <Contact />
-    /router/1/<lo-que-sea>    → <NotFound />
+  Este ejercicio vive en /ejercicios/router/1. Haz que funcionen estas rutas:
+    /ejercicios/router/1                 → <Home />
+    /ejercicios/router/1/sobre-nosotros  → <About />
+    /ejercicios/router/1/contacto        → <Contact />
+    /ejercicios/router/1/<lo-que-sea>    → <NotFound />
 
   1. Crea las rutas con <Routes> y <Route>. Los componentes ya están hechos.
   2. Crea un menú con NavLink a Inicio, Sobre nosotros y Contacto.
@@ -19,7 +19,7 @@ import styles from "../Exercises.module.css";
 
   Pistas:
   - Dentro de este componente los path van SIN barra delante: "contacto".
-  - Para /router/1 a secas usa <Route index ... />.
+  - Para /ejercicios/router/1 a secas usa <Route index ... />.
   - Para "cualquier otra cosa" usa path="*".
   - className de NavLink puede ser una función: ({ isActive }) => ...
   - ¿Por qué "Inicio" sale activo en todas las páginas? Busca la prop `end`.
@@ -28,7 +28,7 @@ import styles from "../Exercises.module.css";
   - Cambia un NavLink por <a href="...">. ¿Qué pasa con la página?
 */
 
-const BASE = "/router/1";
+const BASE = "/ejercicios/router/1";
 
 const Home = () => <p>🏠 Bienvenido a la tienda.</p>;
 const About = () => <p>👋 Somos una tienda de ejemplo del curso de React.</p>;

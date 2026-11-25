@@ -19,8 +19,7 @@ en la raíz (`/`) que junta todo lo anterior y añade algo nuevo: **formularios*
 Todas se pintan dentro de `src/layouts/MainLayout.jsx` (cabecera + `<Outlet />`).
 Las rutas se escriben en `src/App.jsx`.
 
-Los ejercicios anteriores siguen en:
-`/ejercicios/use-effect`, `/ejercicios/use-state`, `/ejercicios/formularios` y `/router`.
+Los ejercicios están en `/ejercicios`.
 
 ## Fases
 
@@ -43,7 +42,7 @@ npm install -D tailwindcss @tailwindcss/vite
    @import "tailwindcss";
    ```
 3. Comprueba que funciona: pon `className="text-3xl font-bold text-blue-600"` en el `HomePage`.
-4. Ahora abre `/router` y `/ejercicios/use-effect`. ¿Ha cambiado algo? Tailwind trae un
+4. Ahora abre `/ejercicios`. ¿Ha cambiado algo? Tailwind trae un
    **reset CSS** (preflight) que quita márgenes y tamaños por defecto a `h1`, `ul`, `button`...
    ¿Por qué afecta a TODA la app aunque solo lo uses en la tienda?
 

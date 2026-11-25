@@ -4,22 +4,22 @@ import styles from "../../Exercises.module.css";
 /*
   EJERCICIO 1 — Rutas básicas, menú con NavLink y página 404   ✅ SOLUCIÓN
 
-  Este ejercicio vive en /router/1, así que sus rutas son:
-    /router/1                 → <Home />
-    /router/1/sobre-nosotros  → <About />
-    /router/1/contacto        → <Contact />
-    /router/1/<lo-que-sea>    → <NotFound />
+  Este ejercicio vive en /ejercicios/router/1, así que sus rutas son:
+    /ejercicios/router/1                 → <Home />
+    /ejercicios/router/1/sobre-nosotros  → <About />
+    /ejercicios/router/1/contacto        → <Contact />
+    /ejercicios/router/1/<lo-que-sea>    → <NotFound />
 
   Qué se practica:
   - <Routes> elige UNA sola <Route>: la que mejor encaja con la URL.
-  - `index` = la ruta del propio padre (/router/1).
+  - `index` = la ruta del propio padre (/ejercicios/router/1).
   - path="*" atrapa todo lo que no encaja con ninguna otra → 404.
   - NavLink recibe { isActive } en className para marcar el enlace activo.
-  - `end` en el enlace de Inicio: sin él, /router/1 estaría "activo" también
-    en /router/1/contacto (porque la URL empieza igual).
+  - `end` en el enlace de Inicio: sin él, /ejercicios/router/1 estaría "activo" también
+    en /ejercicios/router/1/contacto (porque la URL empieza igual).
 */
 
-const BASE = "/router/1";
+const BASE = "/ejercicios/router/1";
 
 const navClass = ({ isActive }) => (isActive ? styles.active : styles.navLink);
 
@@ -53,7 +53,7 @@ export const Exercise1Routes = () => {
         </Link>
       </nav>
 
-      {/* Los path de dentro son relativos a /router/1 (sin barra delante) */}
+      {/* Los path de dentro son relativos a /ejercicios/router/1 (sin barra delante) */}
       <Routes>
         <Route index element={<Home />} />
         <Route path="sobre-nosotros" element={<About />} />
