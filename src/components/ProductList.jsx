@@ -1,20 +1,3 @@
-/*
-<ProductList
-  products={
-  [{
-    name: "Camiseta"
-    id: 1
-    },
-    {
-      name: "zapatos"
-      id: 2
-    }
-  ]}
-/>
-
-*/
-
-import { Fragment } from "react";
 import { Product } from "./Product/Product";
 
 export const ProductList = ({ products }) => {

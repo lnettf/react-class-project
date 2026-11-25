@@ -10,7 +10,17 @@ export const UseEffectExercises = () => {
   return (
     <main className={styles.page}>
       <h1 className={styles.pageTitle}>Ejercicios de useEffect</h1>
-      <Link to="/router">→ Ir a los ejercicios de React Router</Link>
+      <nav className={styles.nav}>
+        <Link className={styles.navLink} to="/">
+          → Ir a la tienda
+        </Link>
+        <Link className={styles.navLink} to="/router">
+          Ejercicios de React Router
+        </Link>
+        <Link className={styles.navLink} to="/ejercicios/formularios">
+          Ejercicios de formularios
+        </Link>
+      </nav>
       <UseEffectIntro />
       <Exercise1TabTitle />
       <Exercise2Stopwatch />

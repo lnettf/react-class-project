@@ -62,6 +62,9 @@ export const RouterExercises = () => {
         <h1 className={styles.pageTitle}>Ejercicios de React Router</h1>
         <nav className={styles.nav}>
           <Link className={styles.navLink} to="/">
+            → Ir a la tienda
+          </Link>
+          <Link className={styles.navLink} to="/ejercicios/use-effect">
             ← Ejercicios de useEffect
           </Link>
           {/* `end`: solo está activo si la URL es exactamente /router */}
